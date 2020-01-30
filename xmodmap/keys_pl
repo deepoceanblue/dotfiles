@@ -1,0 +1,51 @@
+! === Polish characters support: AltGr + char; AltGr is AltL key
+! 5rd/6th col (lowercase/uppercase letters)
+! de facto standard for inputting Polish chars 
+! === additional special keys: Mode_switch + char; Mode_switch is Caps_lock key
+! 3rd/4th col 
+! workarounds for broken or oddly-placed keys on different keyboards.
+! Whenever feasible these match readline C- combos, e.g.:
+!     Ms-I for Tab (C-i in readline)
+! with a notable exception of Ms-h being <Left> and not <BS>.
+! Combos with Ms defined here:
+!  - are respected by vast majority of apps (without readline, gui ones etc.)
+!  - do not clash with apps' bindings, especially in gui
+!  - work *good enough* with modifiers: C,S,A 
+!    (X/term/console keyboard handling is full of minute inconsistencies; test extensively)
+
+! ============ bindings
+! hjkl are cursor keys:
+!  - comfortable use of readline history
+!  - for vim-like movement with no need to configure/patch/curse-out-loud individual apps
+keysym h = h H Left NoSymbol NoSymbol NoSymbol
+keysym j = j J Down NoSymbol NoSymbol NoSymbol
+keysym k = k K Up NoSymbol NoSymbol NoSymbol
+keysym l = l L Right NoSymbol lstroke Lstroke
+
+keysym a = a A Home NoSymbol aogonek Aogonek
+keysym c = c C Escape NoSymbol cacute Cacute
+keysym d = d D Delete NoSymbol comma NoSymbol
+keysym e = e E End NoSymbol eogonek Eogonek
+! Ms-f is BS because Ms-h is already taken
+! AltGr-f char is used in some apps see e.g.: inputrc,vimrc
+! it might be anything you never have to actually type in
+keysym f = f F BackSpace NoSymbol heart  NoSymbol
+keysym i = i I Tab NoSymbol NoSymbol NoSymbol
+keysym m = m M Return NoSymbol NoSymbol NoSymbol
+! just a commodity, works with S- for scroll back in term
+keysym n = n N Next NoSymbol nacute Nacute
+keysym o = o O NoSymbol NoSymbol oacute Oacute
+!works with S- in terms for vim-like pasting selection
+keysym p = p P Insert NoSymbol NoSymbol NoSymbol
+keysym s = s S NoSymbol NoSymbol sacute Sacute
+!just a commodity, typing the tilde on my keyboard gives me tendonitis in pinkies :)
+keysym t = t T NoSymbol NoSymbol asciitilde NoSymbol
+! just a commodity, works with S- for scroll back in term
+keysym v = v V Prior NoSymbol NoSymbol NoSymbol
+keysym x = x X NoSymbol NoSymbol zacute Zacute
+keysym z = z Z NoSymbol NoSymbol zabovedot Zabovedot 
+
+! Multi_key is a candidate for removal
+keysym space = space NoSymbol Multi_key NoSymbol NoSymbol 
+
+! vim: filetype=xmodmap

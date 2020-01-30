@@ -1,0 +1,26 @@
+! === remove some bindings
+! clear useless Caps_Lock
+clear lock
+remove Lock = Caps_Lock
+remove Shift = Caps_Lock
+! repetitive issues with automatic X config
+! so rebinding it manually
+remove Mod4 = Super_L
+
+!=== add bindings
+! make extra sure we have those in proper places
+! generating proper keysyms
+keycode 22 = BackSpace
+keycode 64 = Alt_L 
+
+! Mode_switch instead of Caps_Lock 
+! xmodmap's keys_pl relays on it being easily accessible 
+keycode 66 = NoSymbol NoSymbol
+keycode 66 = Mode_switch 
+
+! force Super_L to proper keycode and to Mod4 keysym
+! WM configurations relay on it being properly binded
+keycode 133 = Super_L
+add Mod4 = Super_L
+
+! vim: filetype=xmodmap
