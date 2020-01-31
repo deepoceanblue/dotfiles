@@ -38,7 +38,7 @@ keysym o = o O NoSymbol NoSymbol oacute Oacute
 !works with S- in terms for vim-like pasting selection
 keysym p = p P Insert NoSymbol NoSymbol NoSymbol
 keysym s = s S NoSymbol NoSymbol sacute Sacute
-!just a commodity, typing the tilde on my keyboard gives me tendonitis in pinkies :)
+!just a commodity, typing the tilde on my keyboard gives me tendonitis in my pinkies :)
 keysym t = t T NoSymbol NoSymbol asciitilde NoSymbol
 ! just a commodity, works with S- for scroll back in term
 keysym v = v V Prior NoSymbol NoSymbol NoSymbol
@@ -46,6 +46,10 @@ keysym x = x X NoSymbol NoSymbol zacute Zacute
 keysym z = z Z NoSymbol NoSymbol zabovedot Zabovedot 
 
 ! Multi_key is a candidate for removal
+! it is binded to tap (as opposed to press and hold) AltGr (Alt_L) via `xcape`
+! used to input transliterations of non-Latin (Indic and Greek) alphabets
+! which use a lot of different diacritics
+! without switching or changing the basic layout above 
 keysym space = space NoSymbol Multi_key NoSymbol NoSymbol 
 
 ! vim: filetype=xmodmap
